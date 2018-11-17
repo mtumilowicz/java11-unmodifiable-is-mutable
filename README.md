@@ -12,16 +12,12 @@ In java we have `Collections.unmodifiableXXX` methods:
 * `Collections.unmodifiableSortedMap`
 * `Collections.unmodifiableSortedSet`
 
+Java doc for `Collections.unmodifiableCollection`:
 >Returns an unmodifiable view of the
 specified collection. Query operations on the returned collection "read through"
 to the specified collection, and attempts to modify the returned
 collection, whether direct or via its iterator, result in an
 UnsupportedOperationException
-```
-public static <T> Collection<T> unmodifiableCollection(Collection<? extends T> c) {
-        return new UnmodifiableCollection<>(c);
-}
-```
 
 # project description
 We have tested (in `UnmodifiableTest`) that:
