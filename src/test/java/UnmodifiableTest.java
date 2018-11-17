@@ -12,6 +12,12 @@ import static org.junit.Assert.assertTrue;
  * Created by mtumilowicz on 2018-11-17.
  */
 public class UnmodifiableTest {
+    
+    @Test(expected = UnsupportedOperationException.class)
+    public void isUnmodifiable() {
+        Collections.unmodifiableCollection(new LinkedList<Integer>()).add(1);
+    }
+    
     @Test
     public void isMutable() {
 //        given
