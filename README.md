@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-unmodifiable-is-mutable.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-unmodifiable-is-mutable)
+
 # java11-unmodifiable-is-mutable
 Proof that unmodifiable collections are mutable.
 
