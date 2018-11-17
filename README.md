@@ -1,7 +1,7 @@
 # java11-unmodifiable-is-mutable
 Proof that unmodifiable collections are mutable.
 
-# project description
+# preface
 In java we have `Collections.unmodifiableXXX` methods:
 * `Collections.unmodifiableCollection`
 * `Collections.unmodifiableList`
@@ -12,7 +12,19 @@ In java we have `Collections.unmodifiableXXX` methods:
 * `Collections.unmodifiableSortedMap`
 * `Collections.unmodifiableSortedSet`
 
-and we tested (in `UnmodifiableTest`) that:
+>Returns an unmodifiable view of the
+specified collection. Query operations on the returned collection "read through"
+to the specified collection, and attempts to modify the returned
+collection, whether direct or via its iterator, result in an
+UnsupportedOperationException
+```
+public static <T> Collection<T> unmodifiableCollection(Collection<? extends T> c) {
+        return new UnmodifiableCollection<>(c);
+}
+```
+
+# project description
+We have tested (in `UnmodifiableTest`) that:
 1. collection obtained from that method is unmodifiable 
 (try to modify it ends in an exception - `UnsupportedOperationException`)
     ```
