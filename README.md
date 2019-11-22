@@ -21,6 +21,25 @@ to the specified collection, and attempts to modify the returned
 collection, whether direct or via its iterator, result in an
 UnsupportedOperationException
 
+For example:
+```
+static class UnmodifiableList<E> extends UnmodifiableCollection<E>
+                                  implements List<E> {
+    
+    // lots of code
+
+    public E set(int index, E element) {
+        throw new UnsupportedOperationException();
+    }
+    
+    public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+    }
+    
+    // lots of code
+}
+```
+
 # project description
 We have tested (in `UnmodifiableTest`) that:
 1. collection obtained from that method is unmodifiable 
